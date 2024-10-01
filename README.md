@@ -2,7 +2,7 @@
 
 My version of the Real Time Bus tracker from MIT xPro course.
 
-This project was particularly diffucult for me but I learned a LOT about working with APIs and fetching data from sources open to the public.
+This project was particularly diffucult for me but I learned a lot about working with APIs and fetching data from sources open to the public.
 
 In this project I had to get access to public bus routes and live geo locations of these buses to display them on a map while they're updating in real time.
 
