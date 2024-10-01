@@ -9,3 +9,6 @@ In this project I had to get access to public bus routes and live geo locations 
 This bus tracker app shows you the active busses in the Cambridge and also highlights the route from MIT's campus to Harvard's.
 
 ***TO RUN THIS PROJECT YOU WILL NEED TO A PUBLIC ACCESS TOKEN AVAILABLE FOR FREE ON MAPBOX.COM***
+
+
+![Untitled design (3)](https://github.com/user-attachments/assets/265cba14-fbf2-47a2-ab62-e091b2fa1dc7)
