@@ -11,4 +11,4 @@ This bus tracker app shows you the active busses in the Cambridge and also highl
 ***TO RUN THIS PROJECT YOU WILL NEED TO A PUBLIC ACCESS TOKEN AVAILABLE FOR FREE ON MAPBOX.COM***
 
 
-![Untitled design (3)](https://github.com/user-attachments/assets/265cba14-fbf2-47a2-ab62-e091b2fa1dc7)
+
