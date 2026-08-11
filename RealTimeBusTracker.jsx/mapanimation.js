@@ -34,7 +34,9 @@ async function run() {
     // Get current bus data from the MBTA API
     const locationData = await getBusLocationData();
 
-    console.log("Bus data updated:", new Date());
+    const updatedAt = new Date();
+    
+    console.log("Bus data updated:", updatedAt);
     console.log(locationData);
 
     // Store information about active buses
@@ -75,7 +77,7 @@ async function run() {
       activeBuses.push(busInfo);
     });
 
-    updateInfoBox(activeBuses);
+    updateInfoBox(activeBuses, updatedAt);
   } catch (error) {
     console.error("Unable to load MBTA bus data:", error);
 
@@ -114,7 +116,7 @@ async function getBusLocationData() {
 /**
  * Update the information box containing the active buses.
  */
-function updateInfoBox(activeBuses) {
+function updateInfoBox(activeBuses, updatedAt) {
   const infobox = document.getElementById("infobox");
 
   if (!infobox) {
@@ -122,9 +124,10 @@ function updateInfoBox(activeBuses) {
   }
 
   let html = `
-    <h3>Currently Active Buses: ${activeBuses.length}</h3>
-    <ul>
-  `;
+  <h3>Currently Active Buses: ${activeBuses.length}</h3>
+  <p>Last updated: ${updatedAt.toLocaleTimeString()}</p>
+  <ul>
+`;
 
   activeBuses.forEach((bus) => {
     html += `
