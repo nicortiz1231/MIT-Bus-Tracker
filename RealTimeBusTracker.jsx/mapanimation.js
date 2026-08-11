@@ -35,7 +35,7 @@ async function run() {
     const locationData = await getBusLocationData();
 
     const updatedAt = new Date();
-    
+
     console.log("Bus data updated:", updatedAt);
     console.log(locationData);
 
@@ -59,9 +59,21 @@ async function run() {
 
       markerElement.appendChild(busNumber);
 
-      // Create the Mapbox marker
+      // Create a popup containing information about the bus
+      const popup = new mapboxgl.Popup({
+        offset: 25,
+      }).setHTML(`
+        <strong>Bus ${bus.label || "Unknown"}</strong>
+        <br>
+        Current Stop: ${bus.current_stop_sequence ?? "Unknown"}
+        <br>
+        Occupancy: ${bus.occupancy_status || "Unknown"}
+      `);
+
+      // Create the Mapbox marker and attach the popup
       const mapMarker = new mapboxgl.Marker(markerElement)
         .setLngLat(lngLat)
+        .setPopup(popup)
         .addTo(map);
 
       // Save the marker so it can be removed during the next refresh
@@ -124,10 +136,10 @@ function updateInfoBox(activeBuses, updatedAt) {
   }
 
   let html = `
-  <h3>Currently Active Buses: ${activeBuses.length}</h3>
-  <p>Last updated: ${updatedAt.toLocaleTimeString()}</p>
-  <ul>
-`;
+    <h3>Currently Active Buses: ${activeBuses.length}</h3>
+    <p>Last updated: ${updatedAt.toLocaleTimeString()}</p>
+    <ul>
+  `;
 
   activeBuses.forEach((bus) => {
     html += `
@@ -211,9 +223,6 @@ async function highlightRoute() {
 
 /**
  * Start the application after the entire page has loaded.
- *
- * This is safer than calling run() immediately because it ensures
- * that the HTML and the Mapbox map already exist.
  */
 window.addEventListener("load", () => {
   run();
