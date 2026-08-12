@@ -3,7 +3,12 @@
 An interactive web app that displays live MBTA Route 1 bus locations on a Mapbox map and updates them in real time.
 
 ### Live Demo
-https://nicortiz1231.github.io/MIT-Bus-Tracker/
+
+[https://nicortiz1231.github.io/MIT-Bus-Tracker/](https://nicortiz1231.github.io/MIT-Bus-Tracker/)
+
+## Showcase
+
+![MBTA Route 1 Live Bus Tracker](MIT-BUS-TRACKER.gif)
 
 ## About the Project
 
