@@ -1,4 +1,4 @@
-# MBTA Route 1 Live Bus Tracker
+# MIT - Harvard Live Bus Tracker
 
 An interactive web app that displays live MBTA Route 1 bus locations on a Mapbox map and updates them in real time.
 
